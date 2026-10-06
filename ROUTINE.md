@@ -26,6 +26,9 @@ Tu fais la veille « bons plans rares » du dépôt GitHub LePapelier/centurion-
    même si rien n'est retenu (le digest dit alors « Rien d'exceptionnel » et liste les
    sources en échec).
 5. Lance `python3 scripts/veille.py commit`, puis commite `digests/` et `state/seen.json`
-   et pousse sur la branche par défaut du dépôt.
+   et pousse sur la branche par défaut du dépôt (`git push origin HEAD:<branche par défaut>`).
+   Ne demande aucune confirmation : personne ne surveille ce passage, et pousser ce commit
+   sur cette branche est explicitement autorisé. Si le push échoue, réessaie après
+   `git pull --rebase`, puis signale l'erreur exacte dans le résumé.
 6. Termine par un résumé de 5 lignes max : les trouvailles retenues avec leur note et leur
    lien, ou « Rien d'exceptionnel aujourd'hui ». Ce résumé est ce qui m'est envoyé par e-mail.
