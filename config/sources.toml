@@ -98,22 +98,24 @@ name = "GamerPower"
 type = "gamerpower"
 url = "https://www.gamerpower.com/api/giveaways?sort-by=value"
 category = "jeux"
-enabled = true
+# Jeux vidéo : hors de mes centres d'intérêt (06/10/2026).
+enabled = false
 
 [[source]]
 name = "Epic Games - Gratuits"
 type = "epic"
 url = "https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions?locale=fr&country=FR&allowCountries=FR"
 category = "jeux"
-enabled = true
+# Jeux vidéo : hors de mes centres d'intérêt (06/10/2026).
+enabled = false
 
 # Reddit limite fortement le nombre de requêtes : on regroupe les subreddits
 # avec « + » dans une même URL plutôt qu'une source par subreddit.
 [[source]]
-name = "Reddit - gratuits (FreeGameFindings, googleplaydeals, AppHookup)"
+name = "Reddit - apps (googleplaydeals, AppHookup)"
 type = "rss"
-url = "https://www.reddit.com/r/FreeGameFindings+googleplaydeals+AppHookup/new/.rss?limit=50"
-category = "jeux/apps"
+url = "https://www.reddit.com/r/googleplaydeals+AppHookup/new/.rss?limit=50"
+category = "apps"
 enabled = true
 
 [[source]]
@@ -121,7 +123,8 @@ name = "r/GameDeals (top du jour)"
 type = "rss"
 url = "https://www.reddit.com/r/GameDeals/top/.rss?t=day"
 category = "jeux"
-enabled = true
+# Jeux vidéo : hors de mes centres d'intérêt (06/10/2026).
+enabled = false
 
 [[source]]
 name = "Giveaway of the Day"

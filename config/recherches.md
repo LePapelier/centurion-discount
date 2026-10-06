@@ -30,8 +30,7 @@ Ajoute, retire ou reformule librement des lignes.
 - `échantillons gratuits nouveaux {mois}`
 - `test produit gratuit marque recrute testeurs {mois}`
 
-## Tech, voyages, logiciels
+## Tech, voyages, logiciels (pas de jeux vidéo)
 - `erreur de prix {mois}`
 - `vol erreur de prix départ Paris OR Lyon OR Marseille {mois}`
 - `logiciel licence à vie gratuite giveaway {mois}`
-- `Prime Gaming jeux gratuits {mois}`

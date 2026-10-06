@@ -22,7 +22,7 @@ Une routine Claude Code lance périodiquement le prompt de `ROUTINE.md`.
 # Veille du JJ/MM/AAAA HHhMM
 
 ## 🔥 9/10 — Titre court de l'offre
-**Prix** : 0 € (au lieu de 39,99 €) · **Jusqu'au** : 12/10 · **Source** : GamerPower
+**Prix** : 0 € (au lieu de 39,99 €) · **Jusqu'au** : 12/10 · **Source** : Dealabs - Gratuit
 Pourquoi c'est rare : une ou deux phrases factuelles.
 → https://lien-direct
 

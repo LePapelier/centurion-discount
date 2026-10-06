@@ -1,6 +1,6 @@
 # centurion-discount
 
-Claude scanne régulièrement des sites de bons plans, des API de jeux offerts et des
+Claude scanne régulièrement des sites de bons plans, des recherches web et des
 newsletters, puis ne te remonte que ce qui est **vraiment** rare.
 
 ```
