@@ -11,6 +11,13 @@ et **sans frais de port**. Exemples : produit taille réelle offert par une marq
 offert sur simple formulaire, test produit où l'envoi est garanti (pas une candidature
 parmi des milliers).
 
+**Les échantillons de cosmétiques et de parfums** (dosettes, minis) comptent peu : regroupe-les
+sur une seule ligne en bas du digest (« Échantillons beauté du jour : … »), sans note, et
+ne les mets jamais en tête. Ce que je veux vraiment voir, ce sont les objets gratuits qui
+sortent de la beauté : objets utiles pour la maison ou le jardin, alimentation, high-tech,
+livres et magazines, goodies de marque, kits offerts (économie d'eau ou d'énergie,
+composteur, récupérateur d'eau de pluie…).
+
 Pour chacune, précise dans le digest : ce qu'on reçoit concrètement (format, quantité),
 la démarche (formulaire, compte à créer…), la limite (stock, 1 par foyer, date) et si
 c'est urgent (« ⏱️ stock limité, à faire tout de suite »). Mets ces offres **en premier**.
@@ -32,11 +39,11 @@ c'est urgent (« ⏱️ stock limité, à faire tout de suite »). Mets ces offr
 - Fonds d'écran, petites applis mobiles passées gratuites
 - Essais gratuits qui se transforment en abonnement
 - Concours / tirages au sort, candidatures de testeurs sans garantie d'être retenu
-- Offres locales d'un seul magasin, ou réservées à un autre pays
+- Offres locales hors de ma zone (voir Localisation), ou réservées à un autre pays
 
 ## Barème (note de 1 à 10)
-- **9-10** : produit physique de valeur (taille réelle, > 10 €) livré gratuitement sans achat
-- **8** : échantillons de qualité ou petit produit livré gratuitement ; produit 100 %
+- **9-10** : objet physique de valeur (> 10 €), hors cosmétique, livré gratuitement sans achat
+- **8** : petit objet ou produit utile livré gratuitement (hors cosmétique) ; produit 100 %
   remboursé de bonne valeur avec démarche simple
 - **7** : autre gratuit livré à domicile ; cumul qui rend un produit utile gratuit ;
   erreur de prix énorme
@@ -62,4 +69,8 @@ promos moyennes. Au-delà de 8 éléments retenus, ne garder que les meilleurs.
 Une offre déjà signalée dans un digest précédent ne doit pas être répétée.
 
 ## Localisation
+Ma zone : **À COMPLÉTER (commune / département)**. Les distributions gratuites des
+collectivités de ma zone (composteur, kit d'économie d'eau, récupérateur d'eau de pluie,
+arbres…) sont aussi intéressantes que les objets livrés : note-les comme tels.
+
 France — ignorer les offres réservées à d'autres pays, sauf produits numériques accessibles depuis la France.

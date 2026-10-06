@@ -8,6 +8,20 @@
 # Chaque domaine doit être autorisé dans la politique réseau de l'environnement cloud.
 
 [[source]]
+name = "Dealabs - Jardin gratuit (composteurs, distributions locales)"
+type = "rss"
+url = "https://www.dealabs.com/rss/groupe/produits-de-jardin-gratuits"
+category = "gratuit"
+enabled = true
+
+[[source]]
+name = "Dealabs - Alimentation gratuite"
+type = "rss"
+url = "https://www.dealabs.com/rss/groupe/produits-alimentaires-gratuits"
+category = "gratuit"
+enabled = true
+
+[[source]]
 name = "Dealabs - Hot"
 type = "rss"
 url = "https://www.dealabs.com/rss/hot"

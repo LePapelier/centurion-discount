@@ -20,6 +20,14 @@ Ajoute, retire ou reformule librement des lignes.
 - `dealabs gratuit échantillon "livraison gratuite" {mois}`
 - `goodies gratuits à recevoir par la poste {mois}`
 
+## Objets gratuits hors cosmétique
+- `magazine OR livre gratuit à recevoir chez soi {mois}`
+- `goodies OR autocollants gratuits marque à recevoir {mois}`
+- `produit alimentaire offert gratuit livré à domicile {mois}`
+- `kit gratuit économie d'énergie OR économie d'eau à recevoir {mois}`
+- `distribution gratuite composteur OR récupérateur d'eau OR kit hydro-économe {zone} {mois}`
+  (remplacer `{zone}` par la zone de `config/profil.md`)
+
 ## Produits gratuits après remboursement
 - `produit 100% remboursé {mois}`
 - `Envie de Plus offre remboursement {mois}`
