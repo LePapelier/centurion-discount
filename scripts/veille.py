@@ -2,6 +2,7 @@
 """Collecte des bons plans pour la routine de veille.
 
     python3 scripts/veille.py fetch   # récupère les sources -> data/candidates.json (nouveautés seulement)
+    python3 scripts/veille.py fetch --depuis 26  # fenêtre glissante, sans mémoire (routine sans push)
     python3 scripts/veille.py commit  # marque les candidats comme vus dans state/seen.json
 
 Le tri (ce qui est vraiment rare) est fait par Claude à partir de data/candidates.json
@@ -199,9 +200,12 @@ def load_seen() -> dict[str, str]:
     return {}
 
 
-def cmd_fetch(_args) -> int:
+def cmd_fetch(args) -> int:
     seen = load_seen()
-    cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
+    # --depuis H : fenêtre glissante pour les routines qui ne peuvent pas mémoriser state/seen.json
+    hours = getattr(args, "depuis", None)
+    window = timedelta(hours=hours) if hours else timedelta(days=MAX_AGE_DAYS)
+    cutoff = datetime.now(timezone.utc) - window
     candidates, report = [], []
     for src in load_sources():
         try:
@@ -257,7 +261,10 @@ def cmd_commit(_args) -> int:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="cmd", required=True)
-    sub.add_parser("fetch").set_defaults(func=cmd_fetch)
+    fetch = sub.add_parser("fetch")
+    fetch.add_argument("--depuis", type=int, metavar="HEURES",
+                       help="ne garder que ce qui a été publié dans les N dernières heures")
+    fetch.set_defaults(func=cmd_fetch)
     sub.add_parser("commit").set_defaults(func=cmd_commit)
     args = parser.parse_args()
     return args.func(args)

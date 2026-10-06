@@ -1,7 +1,9 @@
 # centurion-discount
 
 Veille automatique des trucs gratuits intéressants et des promos vraiment rares.
-Une routine Claude Code lance périodiquement le prompt de `ROUTINE.md`.
+Une routine Claude Code lance chaque matin le prompt de `ROUTINE.md`, en lecture seule
+(pas de push possible depuis une routine) : elle regarde les dernières 24 h et envoie le
+digest par e-mail.
 
 ## Fonctionnement
 - `config/sources.toml` : sources scannées (RSS/Atom, API GamerPower, API Epic). Les

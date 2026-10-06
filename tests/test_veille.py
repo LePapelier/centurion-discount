@@ -86,3 +86,23 @@ def test_parse_feed_tolerates_bare_ampersands():
     (item,) = veille.parse_feed(data)
     assert item["title"] == "Lenor 100% remboursé & Dash"
     assert item["url"] == "https://ex.fr/a"
+
+
+def test_fetch_depuis_keeps_only_recent(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+    sources = tmp_path / "sources.toml"
+    sources.write_text('[[source]]\nname="D"\ntype="rss"\nurl="x"\n')
+    monkeypatch.setattr(veille, "SOURCES_FILE", sources)
+    monkeypatch.setattr(veille, "SEEN_FILE", tmp_path / "seen.json")
+    monkeypatch.setattr(veille, "CANDIDATES_FILE", tmp_path / "candidates.json")
+    fmt = "%a, %d %b %Y %H:%M:%S +0000"
+    now = datetime.now(timezone.utc)
+    feed = ("<rss><channel>"
+            f"<item><title>Récent</title><link>https://a/1</link><pubDate>{(now - timedelta(hours=2)).strftime(fmt)}</pubDate></item>"
+            f"<item><title>Hier</title><link>https://a/2</link><pubDate>{(now - timedelta(hours=40)).strftime(fmt)}</pubDate></item>"
+            "</channel></rss>").encode()
+    monkeypatch.setattr(veille, "http_get", lambda url: feed)
+
+    assert veille.cmd_fetch(SimpleNamespace(depuis=26)) == 0
+    titles = [c["title"] for c in json.loads((tmp_path / "candidates.json").read_text())["candidats"]]
+    assert titles == ["Récent"]
