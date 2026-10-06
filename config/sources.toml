@@ -153,9 +153,10 @@ category = "rembourse"
 enabled = true
 
 [[source]]
-name = "Échantillons Club"
+name = "Échantillons Club - échantillons gratuits"
 type = "rss"
-url = "https://www.echantillonsclub.com/feed"
+# Flux de la seule rubrique échantillons (le flux général est surtout des concours).
+url = "https://www.echantillonsclub.com/echantillons-gratuits/feed"
 category = "echantillons"
 enabled = true
 
@@ -165,6 +166,38 @@ enabled = true
 #   www.toutgratuit.fr : « SSL routines::tlsv1 unrecognized name » (site cassé).
 #   www.radins.com : redirige vers un domaine non autorisé (403 du proxy).
 #   www.hotukdeals.com / www.mydealz.de : flux OK (/rss/trending) mais offres UK / DE.
+
+# --- Sites d'échantillons gratuits livrés à domicile (priorité n° 1 du profil) ---
+# Bloqués par le réseau de l'environnement au 06/10/2026 : autorise leur domaine dans
+# Network access, puis passe enabled à true.
+
+[[source]]
+name = "Mes échantillons gratuits"
+type = "rss"
+url = "https://www.mesechantillonsgratuits.fr/feed/"
+category = "echantillons"
+enabled = false
+
+[[source]]
+name = "Monsieur Échantillons"
+type = "rss"
+url = "https://monsieurechantillons.fr/feed/"
+category = "echantillons"
+enabled = false
+
+[[source]]
+name = "Échantillon offert"
+type = "rss"
+url = "https://www.echantillonoffert.com/feed/"
+category = "echantillons"
+enabled = false
+
+[[source]]
+name = "Échantillon-gratuit.org"
+type = "rss"
+url = "https://www.echantillon-gratuit.org/feed/"
+category = "echantillons"
+enabled = false
 
 # --- Newsletters ---------------------------------------------------------
 # Pour suivre une newsletter sans boîte mail : crée un flux sur

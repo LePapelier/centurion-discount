@@ -3,38 +3,51 @@
 Claude lit ce fichier à chaque passage pour décider ce qui mérite d'être signalé.
 Modifie-le librement : c'est lui qui règle la sévérité du filtre.
 
-## Ce qui m'intéresse
-- Logiciels / applis payantes offertes (licences à vie, apps iOS/Android normalement payantes, hors jeux)
-- Erreurs de prix et prix historiquement bas sur de la tech (PC, composants, audio, photo)
-- Vols et voyages à prix aberrants au départ de la France
-- Échantillons, abonnements ou services gratuits qui ont une vraie valeur
-- **Produits gratuits ou presque une fois les remises cumulées** : ODR / « 100 % remboursé »
-  (Envie de Plus, marques), applis de remboursement (Shopmium, Quoty, Coupon Network),
-  cagnotte carte de fidélité, cashback (iGraal, Poulpeo, Joko…), coupons. Le cumul peut
-  même rapporter de l'argent.
+## Priorité absolue : produits physiques gratuits livrés chez moi
+C'est **de loin** ce qui m'intéresse le plus, et ça part vite (stocks limités, premiers
+arrivés premiers servis) : un vrai produit envoyé gratuitement à domicile, **sans achat**
+et **sans frais de port**. Exemples : produit taille réelle offert par une marque,
+échantillons de qualité livrés gratuitement, coffret ou box gratuits, goodies, produit
+offert sur simple formulaire, test produit où l'envoi est garanti (pas une candidature
+parmi des milliers).
 
-## Ce qui ne m'intéresse pas
-- Promos permanentes déguisées (« -70 % » sur un prix barré fictif)
-- Codes de réduction génériques, taux de cashback ordinaires, parrainages — **sauf** s'ils
-  font partie d'un cumul qui rend le produit gratuit ou presque (voir ci-dessus)
-- **Jeux vidéo**, quelle que soit la plateforme (jeux offerts, DLC, promos, monnaies virtuelles)
+Pour chacune, précise dans le digest : ce qu'on reçoit concrètement (format, quantité),
+la démarche (formulaire, compte à créer…), la limite (stock, 1 par foyer, date) et si
+c'est urgent (« ⏱️ stock limité, à faire tout de suite »). Mets ces offres **en premier**.
+
+## Intéressant aussi (mais nettement en dessous)
+- Produits **100 % remboursés** ou gratuits après cumul (ODR, Envie de Plus, Shopmium,
+  Quoty, cagnotte, cashback) quand le prix net est ≤ 0 € et la démarche raisonnable
+- Erreurs de prix **énormes** (≥ 70 % sous le prix habituel, clairement une erreur)
+- Logiciels / applis **vraiment** premium offerts (pas des fonds d'écran ni des petites applis)
+
+## Ce qui ne m'intéresse pas (ne jamais signaler)
+- **Les simples promos et réductions, même très bonnes** (écrans, smartphones, outils,
+  électroménager, plus bas historiques…) : une réduction n'est pas un truc gratuit
+- Primes de bienvenue bancaires, énergie, télécom ; parrainages
+- Cartes cadeaux ou bons « offerts » sous condition d'achat ; « le 3e offert »
+- Cagnottes ou cashback partiels qui laissent un reste à payer significatif
+- Codes de réduction, promos permanentes déguisées
+- **Jeux vidéo**, quelle que soit la plateforme ; avatars, thèmes, DLC, monnaies virtuelles
+- Fonds d'écran, petites applis mobiles passées gratuites
 - Essais gratuits qui se transforment en abonnement
-- Concours / tirages au sort
+- Concours / tirages au sort, candidatures de testeurs sans garantie d'être retenu
+- Offres locales d'un seul magasin, ou réservées à un autre pays
 
-## Barème de rareté (note de 1 à 10)
-- **9-10** : exceptionnel — erreur de prix, produit premium offert, ça arrive quelques fois par an
-- **7-8** : très bon — plus bas historique net, logiciel ou appli premium offert
-- **5-6** : correct mais courant — ne pas signaler
-- **1-4** : bruit
+## Barème (note de 1 à 10)
+- **9-10** : produit physique de valeur (taille réelle, > 10 €) livré gratuitement sans achat
+- **8** : échantillons de qualité ou petit produit livré gratuitement ; produit 100 %
+  remboursé de bonne valeur avec démarche simple
+- **7** : autre gratuit livré à domicile ; cumul qui rend un produit utile gratuit ;
+  erreur de prix énorme
+- **≤ 6** : tout le reste — ne pas signaler
 
 ### Cumuls de remises
 Pour chaque candidat avec des `signaux` (`rembourse`, `cashback`, `cagnotte`,
 `appli_remboursement`…), calcule le **prix net** : prix payé − ODR − remboursement appli
 − cagnotte − cashback − coupon, en vérifiant que ces remises sont bien cumulables (une ODR
-exclut parfois Shopmium) et encore valables. Barème indicatif :
-- net **≤ 0 €** (gratuit ou rémunéré) sur un produit utile : **8-9** (10 si valeur > 30 €)
-- net ≤ 20 % du prix habituel sur un produit de marque utile : **7**
-- remise cumulée ordinaire : 5-6, ne pas signaler
+exclut parfois Shopmium) et encore valables. Barème : net ≤ 0 € → 7-8 selon la valeur et
+la simplicité de la démarche ; s'il reste quelque chose à payer → ne pas signaler.
 
 Dans le digest, détaille le calcul sur une ligne (ex. « 4,99 € − 4,99 € Envie de Plus −
 1 € cashback iGraal = −1 € ») et les conditions (enseigne, limite par foyer, date limite
@@ -44,7 +57,8 @@ d'achat et de demande de remboursement).
 À chaque passage, lance aussi les recherches de `config/recherches.md` avec WebSearch et
 note leurs résultats comme les autres candidats.
 
-Seuil de signalement : **7**. Au-delà de 8 éléments retenus, ne garder que les meilleurs.
+Seuil de signalement : **7**. Mieux vaut « Rien d'exceptionnel aujourd'hui » qu'une liste de
+promos moyennes. Au-delà de 8 éléments retenus, ne garder que les meilleurs.
 Une offre déjà signalée dans un digest précédent ne doit pas être répétée.
 
 ## Localisation
