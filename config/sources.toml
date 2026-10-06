@@ -142,13 +142,29 @@ category = "voyage"
 # Protégé par Cloudflare : HTTP 403 même avec un UA de navigateur (testé le 06/10/2026).
 enabled = false
 
-# --- Sites bloqués par le réseau de l'environnement (testé le 06/10/2026) ---------
-# Réponse du proxy : « CONNECT tunnel failed, response 403 ». Ils sont couverts à chaque
-# passage par les recherches web de config/recherches.md ; pour les lire directement,
-# autorise le domaine dans le réseau de l'environnement puis vérifie l'URL du flux :
-#   bonsplansmania.fr (Envie de Plus, 100 % remboursés), www.enviedeplus.com (P&G, pas de flux),
-#   www.toutgratuit.fr, www.echantillonsclub.com, www.radins.com,
-#   www.hotukdeals.com / www.mydealz.de (même moteur que Dealabs : /rss/hot).
+# --- Sites spécialisés gratuits / remboursés (domaines autorisés le 06/10/2026) ----
+# bonsplansmania suit Envie de Plus (P&G) et les « 100 % remboursés » ; son flux mélange
+# aussi beaucoup de promos et concours ordinaires, filtrés au tri par le profil.
+[[source]]
+name = "bonsplansmania"
+type = "rss"
+url = "https://bonsplansmania.fr/rss.xml"
+category = "rembourse"
+enabled = true
+
+[[source]]
+name = "Échantillons Club"
+type = "rss"
+url = "https://www.echantillonsclub.com/feed"
+category = "echantillons"
+enabled = true
+
+# Non branchés :
+#   www.enviedeplus.com : offres chargées en JavaScript, pas de flux (couvert par
+#     bonsplansmania et les recherches web).
+#   www.toutgratuit.fr : « SSL routines::tlsv1 unrecognized name » (site cassé).
+#   www.radins.com : redirige vers un domaine non autorisé (403 du proxy).
+#   www.hotukdeals.com / www.mydealz.de : flux OK (/rss/trending) mais offres UK / DE.
 
 # --- Newsletters ---------------------------------------------------------
 # Pour suivre une newsletter sans boîte mail : crée un flux sur

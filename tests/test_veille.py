@@ -78,3 +78,11 @@ def test_detect_signals_spots_stackable_discounts():
     assert veille.detect_signals("Lot de 3 Nutella (Via 3.65€ cagnottés)") == ["cagnotte"]
     assert "gratuit" in veille.detect_signals("Échantillon offert", "")
     assert veille.detect_signals("SSD 2 To à 89€", "Bon prix") == []
+
+
+def test_parse_feed_tolerates_bare_ampersands():
+    data = (b'<rss><channel><item><title>Lenor 100% rembours\xc3\xa9 &amp; Dash</title>'
+            b'<link>https://ex.fr/a</link><enclosure url="https://ex.fr/i.jpg?a=1&b=2"/></item></channel></rss>')
+    (item,) = veille.parse_feed(data)
+    assert item["title"] == "Lenor 100% remboursé & Dash"
+    assert item["url"] == "https://ex.fr/a"

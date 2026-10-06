@@ -109,7 +109,11 @@ def detect_signals(*texts: str) -> list[str]:
 
 def parse_feed(data: bytes) -> list[dict]:
     """Parse un flux RSS 2.0 ou Atom en éléments normalisés."""
-    root = ET.fromstring(data)
+    try:
+        root = ET.fromstring(data)
+    except ET.ParseError:
+        # Certains flux (ex. bonsplansmania) laissent des « & » nus dans les URL d'images.
+        root = ET.fromstring(re.sub(rb"&(?!#?\w+;)", b"&amp;", data))
     entries = [el for el in root.iter() if local(el.tag) in ("item", "entry")]
     items = []
     for el in entries:
