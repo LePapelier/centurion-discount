@@ -20,6 +20,17 @@ Ajoute, retire ou reformule librement des lignes.
 - `dealabs gratuit échantillon "livraison gratuite" {mois}`
 - `goodies gratuits à recevoir par la poste {mois}`
 
+## Goodies et boissons offerts (cœur de la veille)
+- `canette offerte gratuite {mois}`
+- `Red Bull OR Monster OR "Coca-Cola" gratuit offert sans achat {mois}`
+- `boisson offerte appli gratuite sans achat {mois}`
+- `snack OR barre OR glace offerte gratuitement {mois}`
+- `produit gratuit Lidl Plus OR "Carrefour" appli offert sans achat {mois}`
+- `Shopmium OR Quoty boisson 100% remboursée {mois}`
+- `distribution gratuite canettes OR échantillons gare OR rue {mois}`
+- `goodies gratuits à recevoir stickers OR t-shirt OR casquette marque {mois}`
+- `dealabs "offert" goodies OR stickers gratuit {mois}`
+
 ## Objets gratuits hors cosmétique
 - `magazine OR livre gratuit à recevoir chez soi {mois}`
 - `goodies OR autocollants gratuits marque à recevoir {mois}`

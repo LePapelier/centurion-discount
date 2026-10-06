@@ -3,6 +3,21 @@
 Claude lit ce fichier à chaque passage pour décider ce qui mérite d'être signalé.
 Modifie-le librement : c'est lui qui règle la sévérité du filtre.
 
+## Ce que je veux vraiment : goodies et trucs offerts
+Le cœur de ma veille, ce sont les **petits trucs offerts par les marques** :
+- **boissons et snacks offerts** : canette de Red Bull, Monster, Coca… offerte,
+  barre, café, glace, produit alimentaire gratuit, que ce soit en livraison, en magasin
+  via une appli (Lidl Plus, Carrefour, Shopmium 100 % remboursé…) ou distribué dans la rue
+  ou les gares, tant qu'il n'y a **rien à acheter** ;
+- **goodies de marque** : stickers, t-shirts, casquettes, tote bags, porte-clés, gourdes,
+  posters, objets promo envoyés gratuitement sur demande ;
+- **objets gratuits à recevoir** hors cosmétique (magazines, kits, petits objets utiles).
+
+Note **8-10** quand c'est vraiment gratuit (sans achat ni frais de port) et facile à
+obtenir ; plus c'est rare ou de valeur (gros goodie, pack de canettes, t-shirt), plus la
+note monte. Si la condition est un achat (« 1 acheté = 1 offert », « dès 20 € ») : ne pas
+signaler.
+
 ## Priorité absolue : produits physiques gratuits livrés chez moi
 C'est **de loin** ce qui m'intéresse le plus, et ça part vite (stocks limités, premiers
 arrivés premiers servis) : un vrai produit envoyé gratuitement à domicile, **sans achat**

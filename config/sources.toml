@@ -15,6 +15,13 @@ category = "gratuit"
 enabled = true
 
 [[source]]
+name = "Dealabs - Boissons (canettes offertes…)"
+type = "rss"
+url = "https://www.dealabs.com/rss/groupe/boissons"
+category = "boissons"
+enabled = true
+
+[[source]]
 name = "Dealabs - Alimentation gratuite"
 type = "rss"
 url = "https://www.dealabs.com/rss/groupe/produits-alimentaires-gratuits"
