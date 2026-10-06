@@ -1,0 +1,90 @@
+# Sources scannées à chaque passage de la routine.
+#
+# type = "rss"        -> flux RSS ou Atom (newsletters via kill-the-newsletter incluses)
+#        "gamerpower" -> API JSON GamerPower (jeux / DLC offerts)
+#        "epic"       -> API JSON des jeux gratuits Epic Games Store
+#
+# Mets enabled = false pour couper une source sans la supprimer.
+# Chaque domaine doit être autorisé dans la politique réseau de l'environnement cloud.
+
+[[source]]
+name = "Dealabs - Hot"
+type = "rss"
+url = "https://www.dealabs.com/rss/hot"
+category = "general"
+enabled = true
+
+[[source]]
+name = "Dealabs - Gratuit"
+type = "rss"
+url = "https://www.dealabs.com/rss/groupe/gratuit"
+category = "gratuit"
+enabled = true
+
+[[source]]
+name = "GamerPower"
+type = "gamerpower"
+url = "https://www.gamerpower.com/api/giveaways?sort-by=value"
+category = "jeux"
+enabled = true
+
+[[source]]
+name = "Epic Games - Gratuits"
+type = "epic"
+url = "https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions?locale=fr&country=FR&allowCountries=FR"
+category = "jeux"
+enabled = true
+
+[[source]]
+name = "r/FreeGameFindings"
+type = "rss"
+url = "https://www.reddit.com/r/FreeGameFindings/new/.rss"
+category = "jeux"
+enabled = true
+
+[[source]]
+name = "r/GameDeals (top du jour)"
+type = "rss"
+url = "https://www.reddit.com/r/GameDeals/top/.rss?t=day"
+category = "jeux"
+enabled = true
+
+[[source]]
+name = "r/googleplaydeals"
+type = "rss"
+url = "https://www.reddit.com/r/googleplaydeals/new/.rss"
+category = "apps"
+enabled = true
+
+[[source]]
+name = "r/AppHookup"
+type = "rss"
+url = "https://www.reddit.com/r/AppHookup/new/.rss"
+category = "apps"
+enabled = true
+
+[[source]]
+name = "Giveaway of the Day"
+type = "rss"
+url = "https://www.giveawayoftheday.com/feed/"
+category = "logiciels"
+enabled = true
+
+[[source]]
+name = "Secret Flying (erreurs de prix vols)"
+type = "rss"
+url = "https://www.secretflying.com/feed/"
+category = "voyage"
+enabled = true
+
+# --- Newsletters ---------------------------------------------------------
+# Pour suivre une newsletter sans boîte mail : crée un flux sur
+# https://kill-the-newsletter.com, abonne-toi avec l'adresse e-mail qu'il donne,
+# puis colle ici l'URL du flux Atom. Une entrée par newsletter.
+#
+# [[source]]
+# name = "Newsletter Exemple"
+# type = "rss"
+# url = "https://kill-the-newsletter.com/feeds/xxxxxxxx.xml"
+# category = "newsletter"
+# enabled = true
