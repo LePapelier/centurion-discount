@@ -35,11 +35,13 @@ url = "https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions?lo
 category = "jeux"
 enabled = true
 
+# Reddit limite fortement le nombre de requêtes : on regroupe les subreddits
+# avec « + » dans une même URL plutôt qu'une source par subreddit.
 [[source]]
-name = "r/FreeGameFindings"
+name = "Reddit - gratuits (FreeGameFindings, googleplaydeals, AppHookup)"
 type = "rss"
-url = "https://www.reddit.com/r/FreeGameFindings/new/.rss"
-category = "jeux"
+url = "https://www.reddit.com/r/FreeGameFindings+googleplaydeals+AppHookup/new/.rss?limit=50"
+category = "jeux/apps"
 enabled = true
 
 [[source]]
@@ -50,32 +52,20 @@ category = "jeux"
 enabled = true
 
 [[source]]
-name = "r/googleplaydeals"
-type = "rss"
-url = "https://www.reddit.com/r/googleplaydeals/new/.rss"
-category = "apps"
-enabled = true
-
-[[source]]
-name = "r/AppHookup"
-type = "rss"
-url = "https://www.reddit.com/r/AppHookup/new/.rss"
-category = "apps"
-enabled = true
-
-[[source]]
 name = "Giveaway of the Day"
 type = "rss"
 url = "https://www.giveawayoftheday.com/feed/"
 category = "logiciels"
-enabled = true
+# Redirige vers feeds.feedburner.com : ajouter ce domaine au réseau avant de réactiver.
+enabled = false
 
 [[source]]
 name = "Secret Flying (erreurs de prix vols)"
 type = "rss"
 url = "https://www.secretflying.com/feed/"
 category = "voyage"
-enabled = true
+# Protégé par Cloudflare : HTTP 403 même avec un UA de navigateur (testé le 06/10/2026).
+enabled = false
 
 # --- Newsletters ---------------------------------------------------------
 # Pour suivre une newsletter sans boîte mail : crée un flux sur

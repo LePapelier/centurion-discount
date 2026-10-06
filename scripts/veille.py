@@ -17,7 +17,9 @@ import html
 import json
 import re
 import sys
+import time
 import tomllib
+import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
@@ -29,7 +31,8 @@ SOURCES_FILE = ROOT / "config" / "sources.toml"
 SEEN_FILE = ROOT / "state" / "seen.json"
 CANDIDATES_FILE = ROOT / "data" / "candidates.json"
 
-USER_AGENT = "Mozilla/5.0 (compatible; centurion-discount/1.0)"
+# UA de navigateur : Reddit renvoie 429 aux agents « robots ».
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36"
 TIMEOUT = 20
 MAX_AGE_DAYS = 7  # ignore les éléments publiés il y a plus longtemps
 SEEN_RETENTION_DAYS = 90
@@ -63,10 +66,17 @@ def parse_date(raw: str | None) -> datetime | None:
     return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
 
 
-def http_get(url: str) -> bytes:
+def http_get(url: str, retries: int = 2) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
-        return resp.read()
+    for attempt in range(retries + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as e:
+            if e.code != 429 or attempt == retries:
+                raise
+            wait = e.headers.get("Retry-After", "")
+            time.sleep(min(int(wait) if wait.isdigit() else 10 * (attempt + 1), 60))
 
 
 def local(tag: str) -> str:
@@ -96,7 +106,7 @@ def parse_feed(data: bytes) -> list[dict]:
         extra = {}
         for child in el:
             # Champs spécifiques (ex. <pepper:merchant name=".." price=".."/> sur Dealabs)
-            if "}" in child.tag and child.attrib and local(child.tag) != "link":
+            if "}" in child.tag and child.attrib and local(child.tag) not in ("link", "content", "thumbnail"):
                 extra[local(child.tag)] = dict(child.attrib)
         items.append({
             "title": title,
