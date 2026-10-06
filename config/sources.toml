@@ -168,18 +168,19 @@ enabled = true
 #   www.hotukdeals.com / www.mydealz.de : flux OK (/rss/trending) mais offres UK / DE.
 
 # --- Sites d'échantillons gratuits livrés à domicile (priorité n° 1 du profil) ---
-# Bloqués par le réseau de l'environnement au 06/10/2026 : autorise leur domaine dans
-# Network access, puis passe enabled à true.
+# Leur domaine doit être autorisé dans le Network access de l'environnement.
 
 [[source]]
 name = "Mes échantillons gratuits"
 type = "rss"
-url = "https://www.mesechantillonsgratuits.fr/feed/"
+# Rubrique échantillons seulement (le flux général est surtout des concours).
+url = "https://www.mesechantillonsgratuits.fr/echantillons-gratuits/feed/"
 category = "echantillons"
-enabled = false
+enabled = true
 
 [[source]]
 name = "Monsieur Échantillons"
+# Page anti-robot (captcha) au lieu du flux, testé le 06/10/2026.
 type = "rss"
 url = "https://monsieurechantillons.fr/feed/"
 category = "echantillons"
@@ -190,6 +191,7 @@ name = "Échantillon offert"
 type = "rss"
 url = "https://www.echantillonoffert.com/feed/"
 category = "echantillons"
+# Flux figé : dernière entrée le 20/03/2026 (testé le 06/10/2026).
 enabled = false
 
 [[source]]
@@ -197,6 +199,7 @@ name = "Échantillon-gratuit.org"
 type = "rss"
 url = "https://www.echantillon-gratuit.org/feed/"
 category = "echantillons"
+# Ne publie que des articles de conseils, pas d'offres (testé le 06/10/2026).
 enabled = false
 
 # --- Newsletters ---------------------------------------------------------
