@@ -16,8 +16,8 @@ sources.toml ──fetch──▶ candidates.json ──Claude + profil.md──
 2. **Profil** : ajuste `config/profil.md` (centres d'intérêt, barème, seuil).
 3. **Newsletters** : pour chacune, crée un flux sur kill-the-newsletter.com, abonne-toi
    avec l'adresse fournie et ajoute l'URL du flux dans `config/sources.toml`.
-4. **Routine** : crée une routine Claude Code avec le prompt de `ROUTINE.md`
-   (ex. 3 fois par jour) et active les notifications.
+4. **Routine** : « Veille bons plans rares » tourne tous les jours vers 8h (Paris) avec le
+   prompt de `ROUTINE.md` et envoie son résumé par e-mail.
 
 ## Tester
 ```
