@@ -12,7 +12,8 @@ sources.toml ──fetch──▶ candidates.json ──Claude + profil.md──
 1. **Réseau** : dans les réglages de l'environnement cloud, autorise les domaines des
    sources (Network access → Custom) : `www.dealabs.com`, `www.gamerpower.com`,
    `store-site-backend-static.ak.epicgames.com`, `www.reddit.com`,
-   `kill-the-newsletter.com`.
+   `kill-the-newsletter.com`. Les sites sans accès réseau (Envie de Plus, bonsplansmania…)
+   sont couverts par les recherches web de `config/recherches.md`.
 2. **Profil** : ajuste `config/profil.md` (centres d'intérêt, barème, seuil).
 3. **Newsletters** : pour chacune, crée un flux sur kill-the-newsletter.com, abonne-toi
    avec l'adresse fournie et ajoute l'URL du flux dans `config/sources.toml`.

@@ -69,3 +69,12 @@ def test_fetch_then_commit_dedups(tmp_path, monkeypatch):
     assert veille.cmd_commit(None) == 0
     veille.cmd_fetch(None)
     assert json.loads((tmp_path / "candidates.json").read_text())["candidats"] == []
+
+
+def test_detect_signals_spots_stackable_discounts():
+    s = veille.detect_signals("Dentifrice Oral-B 100% remboursé via Shopmium",
+                              "Cumulable avec 2€ de cashback iGraal et 1,50€ via 1,50€ sur la carte de fidélité")
+    assert {"rembourse", "appli_remboursement", "cashback", "cagnotte"} <= set(s)
+    assert veille.detect_signals("Lot de 3 Nutella (Via 3.65€ cagnottés)") == ["cagnotte"]
+    assert "gratuit" in veille.detect_signals("Échantillon offert", "")
+    assert veille.detect_signals("SSD 2 To à 89€", "Bon prix") == []

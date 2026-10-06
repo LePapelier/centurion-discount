@@ -38,6 +38,18 @@ MAX_AGE_DAYS = 7  # ignore les éléments publiés il y a plus longtemps
 SEEN_RETENTION_DAYS = 90
 SUMMARY_MAX = 600
 
+# Indices qu'une offre devient gratuite (ou presque) une fois les remises cumulées :
+# ODR, cashback, cagnotte fidélité, coupons, applis de remboursement… Repérés dans le
+# titre et le résumé pour que le tri les examine en priorité et calcule le prix net.
+SIGNAUX = {
+    "rembourse": r"100 ?% rembours|rembours[ée]|\bodr\b|offre de remboursement",
+    "cashback": r"cash ?back|igraal|poulpeo|joko|rakuten|widilo|ebuyclub",
+    "cagnotte": r"cagnott|carte (de )?fid[ée]lit[ée]|ticket (e\.)?leclerc|\bvia [0-9]+[,.]?[0-9]* ?€ (sur|de|en)",
+    "appli_remboursement": r"shopmium|quoty|coupon ?network|envie ?de ?plus|bons? de r[ée]duction|\bcoupons?\b|\bbri\b",
+    "gratuit": r"gratuit|offert|\bfree\b|\b0([,.]00?)? ?€|€ ?0([,.]00?)?\b",
+    "erreur_prix": r"erreur de prix|bug de prix|price error|mistake fare",
+}
+
 
 def item_id(url: str, title: str) -> str:
     key = (url or title).strip().lower()
@@ -88,6 +100,11 @@ def child_text(el: ET.Element, *names: str) -> str | None:
         if local(child.tag) in names and (child.text or "").strip():
             return child.text
     return None
+
+
+def detect_signals(*texts: str) -> list[str]:
+    blob = " ".join(t for t in texts if t).lower()
+    return [name for name, pattern in SIGNAUX.items() if re.search(pattern, blob)]
 
 
 def parse_feed(data: bytes) -> list[dict]:
@@ -196,7 +213,9 @@ def cmd_fetch(_args) -> int:
             iid = item_id(it["url"], it["title"])
             if iid in seen or any(c["id"] == iid for c in candidates):
                 continue
-            candidates.append({"id": iid, "source": src["name"], "categorie": src.get("category", ""), **it})
+            signaux = detect_signals(it["title"], it["summary"])
+            candidates.append({"id": iid, "source": src["name"], "categorie": src.get("category", ""),
+                               "signaux": signaux, **it})
             new += 1
         report.append({"source": src["name"], "ok": True, "recus": len(raw_items), "nouveaux": new})
 
@@ -210,7 +229,8 @@ def cmd_fetch(_args) -> int:
     for r in report:
         status = f"{r['nouveaux']} nouveaux / {r['recus']}" if r["ok"] else f"ÉCHEC {r['erreur']}"
         print(f"- {r['source']}: {status}")
-    print(f"{len(candidates)} candidats écrits dans {CANDIDATES_FILE.name}")
+    cumuls = sum(1 for c in candidates if len(set(c["signaux"]) - {"gratuit"}) >= 2)
+    print(f"{len(candidates)} candidats écrits dans {CANDIDATES_FILE.name} ({cumuls} avec plusieurs remises cumulables)")
     return 0 if any(r["ok"] for r in report) else 1
 
 

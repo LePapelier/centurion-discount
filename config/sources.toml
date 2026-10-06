@@ -21,6 +21,78 @@ url = "https://www.dealabs.com/rss/groupe/gratuit"
 category = "gratuit"
 enabled = true
 
+# Tous les deals publiés (30 derniers seulement) : filet large, complété par les groupes
+# ci-dessous où se nichent les produits « 100 % remboursés » et les cumuls ODR/cashback.
+[[source]]
+name = "Dealabs - Nouveaux"
+type = "rss"
+url = "https://www.dealabs.com/rss/tous"
+category = "general"
+enabled = true
+
+[[source]]
+name = "Dealabs - Erreurs de prix"
+type = "rss"
+url = "https://www.dealabs.com/rss/groupe/erreur-de-prix"
+category = "erreur-prix"
+enabled = true
+
+[[source]]
+name = "Dealabs - Courses & supermarchés"
+type = "rss"
+url = "https://www.dealabs.com/rss/groupe/epicerie-courses-supermarches"
+category = "courses"
+enabled = true
+
+[[source]]
+name = "Dealabs - Santé & cosmétiques"
+type = "rss"
+url = "https://www.dealabs.com/rss/groupe/sante-et-cosmetiques"
+category = "courses"
+enabled = true
+
+[[source]]
+name = "Dealabs - Beauté"
+type = "rss"
+url = "https://www.dealabs.com/rss/groupe/beaute"
+category = "courses"
+enabled = true
+
+[[source]]
+name = "Dealabs - Lessive"
+type = "rss"
+url = "https://www.dealabs.com/rss/groupe/lessive"
+category = "courses"
+enabled = true
+
+[[source]]
+name = "Dealabs - Couches"
+type = "rss"
+url = "https://www.dealabs.com/rss/groupe/couches"
+category = "courses"
+enabled = true
+
+[[source]]
+name = "Dealabs - High-tech"
+type = "rss"
+url = "https://www.dealabs.com/rss/groupe/high-tech"
+category = "tech"
+enabled = true
+
+[[source]]
+name = "Dealabs - Billets d'avion"
+type = "rss"
+url = "https://www.dealabs.com/rss/groupe/billets-d-avion"
+category = "voyage"
+enabled = true
+
+[[source]]
+name = "Dealabs - Services divers"
+type = "rss"
+url = "https://www.dealabs.com/rss/groupe/services-divers"
+category = "services"
+enabled = true
+
 [[source]]
 name = "GamerPower"
 type = "gamerpower"
@@ -66,6 +138,14 @@ url = "https://www.secretflying.com/feed/"
 category = "voyage"
 # Protégé par Cloudflare : HTTP 403 même avec un UA de navigateur (testé le 06/10/2026).
 enabled = false
+
+# --- Sites bloqués par le réseau de l'environnement (testé le 06/10/2026) ---------
+# Réponse du proxy : « CONNECT tunnel failed, response 403 ». Ils sont couverts à chaque
+# passage par les recherches web de config/recherches.md ; pour les lire directement,
+# autorise le domaine dans le réseau de l'environnement puis vérifie l'URL du flux :
+#   bonsplansmania.fr (Envie de Plus, 100 % remboursés), www.enviedeplus.com (P&G, pas de flux),
+#   www.toutgratuit.fr, www.echantillonsclub.com, www.radins.com,
+#   www.hotukdeals.com / www.mydealz.de (même moteur que Dealabs : /rss/hot).
 
 # --- Newsletters ---------------------------------------------------------
 # Pour suivre une newsletter sans boîte mail : crée un flux sur
