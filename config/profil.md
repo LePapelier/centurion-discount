@@ -76,8 +76,8 @@ Dans le digest, détaille le calcul sur une ligne (ex. « 4,99 € − 4,99 € 
 d'achat et de demande de remboursement).
 
 ## Recherche active
-À chaque passage, lance aussi les recherches de `config/recherches.md` avec WebSearch et
-note leurs résultats comme les autres candidats.
+À chaque passage, lance **toutes** les recherches de `config/recherches.md` avec WebSearch
+et note leurs résultats comme les autres candidats.
 
 Seuil de signalement : **7**. Mieux vaut « Rien d'exceptionnel aujourd'hui » qu'une liste de
 promos moyennes. Au-delà de 8 éléments retenus, ne garder que les meilleurs.
