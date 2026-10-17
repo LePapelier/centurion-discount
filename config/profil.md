@@ -84,8 +84,14 @@ promos moyennes. Au-delà de 8 éléments retenus, ne garder que les meilleurs.
 Une offre déjà signalée dans un digest précédent ne doit pas être répétée.
 
 ## Localisation
-Ma zone : **À COMPLÉTER (commune / département)**. Les distributions gratuites des
-collectivités de ma zone (composteur, kit d'économie d'eau, récupérateur d'eau de pluie,
+Ma zone : **Rennes (35), campus de Beaulieu** — je suis étudiant sur le campus.
+Les offres réservées aux **étudiants** me concernent (distributions sur les campus,
+paniers et repas gratuits, goodies d'écoles et d'entreprises, offres CROUS, BDE, salons
+étudiants, « student marketeers » Red Bull et Monster). Les distributions et événements
+gratuits à **Rennes et Rennes Métropole** comptent comme des objets livrés : précise le
+lieu, la date et l'heure. Ailleurs, les offres locales ne m'intéressent pas.
+
+Les distributions gratuites des collectivités de ma zone (composteur, kit d'économie d'eau, récupérateur d'eau de pluie,
 arbres…) sont aussi intéressantes que les objets livrés : note-les comme tels.
 
 France — ignorer les offres réservées à d'autres pays, sauf produits numériques accessibles depuis la France.
